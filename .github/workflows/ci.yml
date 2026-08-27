@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  # A formula can break without being touched: a release asset moves, or a
+  # checksum was wrong and nobody has installed it yet.
+  schedule:
+    - cron: "0 7 * * 1"
+
+jobs:
+  formula:
+    # The macOS runners come with Homebrew. The Linux ones do not.
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Tap this checkout
+        run: brew tap EdMUK/tap "$GITHUB_WORKSPACE"
+
+      - run: brew style EdMUK/tap/termmd
+      - run: brew audit --strict --online EdMUK/tap/termmd
+
+      # Downloads the archive, checks it against the sha256 in the formula, and
+      # runs the binary -- which is the whole of what this tap promises.
+      - run: brew install --formula EdMUK/tap/termmd
+      - run: brew test EdMUK/tap/termmd
