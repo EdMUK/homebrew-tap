@@ -12,23 +12,23 @@ class Termmd < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/EdMUK/termmd/releases/download/v0.1.1/termmd-aarch64-apple-darwin.tar.gz"
-      sha256 "1088b51060c9f1346b76c808a688b227af9310ccee40bbf0b617627423afa516"
+      url "https://github.com/EdMUK/termmd/releases/download/v0.1.2/termmd-aarch64-apple-darwin.tar.gz"
+      sha256 "f4bf9ecd697ab0e89e0ecccd8d9e9ef17de933304bb6a9836a7ed694e248c30b"
     end
     on_intel do
-      url "https://github.com/EdMUK/termmd/releases/download/v0.1.1/termmd-x86_64-apple-darwin.tar.gz"
-      sha256 "4fb6a694216d8f02dda8e0a0cdc8c422a0667cc5026614bcc4937e3a899e75d9"
+      url "https://github.com/EdMUK/termmd/releases/download/v0.1.2/termmd-x86_64-apple-darwin.tar.gz"
+      sha256 "41f514f364165c93d16ccb41ccdacf2d7027021437660ff7fe4798a2965c6c9e"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/EdMUK/termmd/releases/download/v0.1.1/termmd-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "755049f292e3d085dda57f68c5849ad5aed972ca04e66ed44add7fed274bb8ca"
+      url "https://github.com/EdMUK/termmd/releases/download/v0.1.2/termmd-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "9253bc848246d5f22f472142a5393316db6ecbae7a1f79aeda69f2770aca700a"
     end
     on_intel do
-      url "https://github.com/EdMUK/termmd/releases/download/v0.1.1/termmd-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "5dfc59975d432552371cccaa3912b8a077faa9e411d322ff029b2aa4dac0fa3d"
+      url "https://github.com/EdMUK/termmd/releases/download/v0.1.2/termmd-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "737e12c41c96bbbec657e63c43c697a0283ed0d111431facbc1910a4345b010e"
     end
   end
 
@@ -37,14 +37,10 @@ class Termmd < Formula
     doc.install "README.md", "CHANGELOG.md"
     pkgshare.install "config.example.toml"
 
-    # 0.1.1 carries neither. Both arrive in the next release's archive, and are
-    # installed from it without this formula needing anything but a version bump.
-    man1.install "termmd.1" if File.exist?("termmd.1")
-    if File.directory?("completions")
-      bash_completion.install "completions/termmd.bash" => "termmd"
-      zsh_completion.install "completions/_termmd"
-      fish_completion.install "completions/termmd.fish"
-    end
+    man1.install "termmd.1"
+    bash_completion.install "completions/termmd.bash" => "termmd"
+    zsh_completion.install "completions/_termmd"
+    fish_completion.install "completions/termmd.fish"
   end
 
   test do
