@@ -12,23 +12,23 @@ class Termmd < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/EdMUK/termmd/releases/download/v0.1.2/termmd-aarch64-apple-darwin.tar.gz"
-      sha256 "f4bf9ecd697ab0e89e0ecccd8d9e9ef17de933304bb6a9836a7ed694e248c30b"
+      url "https://github.com/EdMUK/termmd/releases/download/v0.1.3/termmd-aarch64-apple-darwin.tar.gz"
+      sha256 "8ec3c7ab763573843af65df31ef4b7e2aaf50a404460e4d7bb89acdd97860090"
     end
     on_intel do
-      url "https://github.com/EdMUK/termmd/releases/download/v0.1.2/termmd-x86_64-apple-darwin.tar.gz"
-      sha256 "41f514f364165c93d16ccb41ccdacf2d7027021437660ff7fe4798a2965c6c9e"
+      url "https://github.com/EdMUK/termmd/releases/download/v0.1.3/termmd-x86_64-apple-darwin.tar.gz"
+      sha256 "3a5872154e14e842ae7d68b50299284718a439a3b1368bde24e0f3156f983310"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/EdMUK/termmd/releases/download/v0.1.2/termmd-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "9253bc848246d5f22f472142a5393316db6ecbae7a1f79aeda69f2770aca700a"
+      url "https://github.com/EdMUK/termmd/releases/download/v0.1.3/termmd-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "51aea7147d20195706372fabf5009d3a33c35f052c09c74730777bbdc4863e5f"
     end
     on_intel do
-      url "https://github.com/EdMUK/termmd/releases/download/v0.1.2/termmd-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "737e12c41c96bbbec657e63c43c697a0283ed0d111431facbc1910a4345b010e"
+      url "https://github.com/EdMUK/termmd/releases/download/v0.1.3/termmd-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "855a373dec249b675fc39e0cc2a92c95a0cdda60402ce14f4f6c3bb027d3434b"
     end
   end
 
